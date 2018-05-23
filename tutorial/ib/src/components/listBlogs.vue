@@ -1,10 +1,9 @@
 <template>
   <div v-theme:column="'wide'" id="show-blogs">
-    <h1>All Blog Articles</h1>
+    <h1>List Blogs Title</h1>
     <input type="text" v-model="search" placeholder="search blogs" />
     <div v-for="blog in filterBlogs" class="single-blog">
       <h2 v-rainbow>{{ blog.title | to-uppercase }}</h2>
-      <article>{{ blog.body | snippet }}</article>
     </div>
   </div>
 </template>
@@ -14,7 +13,7 @@
 import searchMixin from '../mixins/searchMixin';
 
 export default {
-  name: 'showBlogs',
+  name: 'listBlogs',
   data(){
     return{
       blogs: [],
@@ -45,7 +44,6 @@ export default {
     }
   },
   mixins: [searchMixin]
-
 }
 </script>
 
